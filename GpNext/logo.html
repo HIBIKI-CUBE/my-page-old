@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>anime.jsでGpNextロゴ</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script>
+    <script>
+      window.onload = function(){
+        console.log(document.getElementById("logo"))
+      document.getElementById("logo").addEventListener('click',function(){
+        anime({
+          targets: '#logo .lines path',
+          strokeDashoffset: [anime.setDashoffset, 0],
+          easing: 'easeInOutQuad',
+          duration: 2500,
+          direction: 'alternate',
+          loop: false
+        });
+      });
+      }
+    </script>
+  </head>
+  <body>
+		<div id="logo">
+      <svg id="svg" height="100%" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="100%" xmlns:vectornator="http://vectornator.io" version="1.1" viewBox="0 0 1024 1024">
+        <g class="lines" id="l4">
+          <path d="M260+823C260+823+247+809+216+809C185.254+809+148+832+149+875C149.762+907.745+178.915+939+210+939C241+939+261+926+261+926L261+880" stroke="#000000" stroke-width="13.67" stroke-linecap="square" fill="none" opacity="1"/>
+          <path d="M317+938L317+809L384+809C384+809+416+821+415+853C414+884.984+376+893+376+893L317+893" stroke="#000000" stroke-width="12.96" stroke-linecap="square" fill="none" opacity="1"/>
+          <path stroke="#000000" stroke-width="13.67" d="M462+938L461+808L567+940L567+811" fill="none" stroke-linecap="square" opacity="1" stroke-linejoin="bevel"/>
+          <path d="M613+891L704+891C704+881+696+845+661+844C633.251+843.207+613+864.981+613+891C613+916+631+939+658+939C678+939+687+936+696+927" stroke="#000000" stroke-width="11.54" stroke-linecap="square" fill="none" opacity="1"/>
+          <path d="M771+890L732+841L771+890L809+842L771+890L732+941L771+890L810+942" stroke="#000000" stroke-width="11.54" fill="none" opacity="1" stroke-linejoin="bevel"/>
+          <path d="M854+814L854+844L827+844L854+844L894+844L854+844L855+927C866+939+879+944+898+933" stroke="#000000" stroke-width="14.3" fill="none" opacity="1" stroke-linejoin="bevel"/>
+        </g>
+        <g class="lines" id="l1">
+          <path d="M675+244L753.48+170.184C753.48+170.184+664.085+72.5461+515.075+73.4871C364.973+74.435+192.421+192.198+189.716+404.183C187.458+581.172+326+724+508.41+730.457C672.257+736.257+768.046+641.299+815.873+538.637C873.368+415.22+828.525+292.72+828.525+292.72L410.535+289.75L408.979+508.744L517.981+509.519L517.751+400.514L736.745+402.071C736.745+402.071+738.33+614.819+512.199+619.481C390+622+294.561+507.915+301.763+397.979C311+257+417.618+176.122+522+181C629+186+675+243+675+243" stroke="#000000" stroke-width="40.78" stroke-linecap="square" fill="none" opacity="1"/>
+        </g>
+      </svg>
+    </div>
+  </body>
+</html>
