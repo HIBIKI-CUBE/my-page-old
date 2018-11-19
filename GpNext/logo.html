@@ -6,16 +6,60 @@
 		<title>anime.jsでGpNextロゴ</title>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script>
 		<script>
-			let timeline = anime.timeline({autoplay: false});
-			window.onload = function(){
+			let timeline = anime.timeline();
+			window.onload = () => {
 				let h = document.getElementById("logo").clientHeight;
 				timeline
 						.add({
-							targets: '#logo path',
+							targets: '#hero',
 							strokeDashoffset: [anime.setDashoffset, 0],
 							easing: 'easeInOutQuad',
-							duration: 0
+							duration: 2500
 						})
+						.add({
+							targets: '#g',
+							strokeDashoffset: [anime.setDashoffset, 0],
+							easing: 'easeInOutQuad',
+							offset: '-=2300',
+							duration: 500
+						})
+						.add({
+							targets: '#p',
+							strokeDashoffset: [anime.setDashoffset, 0],
+							easing: 'easeInOutQuad',
+							offset: '-=2100',
+							duration: 500
+						})
+						.add({
+							targets: '#n',
+							strokeDashoffset: [anime.setDashoffset, 0],
+							easing: 'easeInOutQuad',
+							offset: '-=1800',
+							duration: 500
+						})
+						.add({
+							targets: '#e',
+							strokeDashoffset: [anime.setDashoffset, 0],
+							easing: 'easeInOutQuad',
+							offset: '-=1600',
+							duration: 500
+						})
+						.add({
+							targets: '#x',
+							strokeDashoffset: [anime.setDashoffset, 0],
+							easing: 'easeInOutQuad',
+							offset: '-=1400',
+							duration: 500
+						})
+						.add({
+							targets: '#t',
+							strokeDashoffset: [anime.setDashoffset, 0],
+							easing: 'easeInOutQuad',
+							offset: '-=1200',
+							duration: 1200
+						}).complete = () => {}
+				document.getElementById("logo").addEventListener('click',() => {
+					let second = anime.timeline()
 						.add({
 							targets: '#logo',
 							translateY: -h,
@@ -24,26 +68,22 @@
 						})
 						.add({
 							targets: '#logo',
+							opacity: 0,
+							duration: 1
+						})
+						.add({
+							targets: '#logo',
 							translateY: 0,
 							duration: 0
 						})
 						.add({
-							targets: '#hero',
-							strokeDashoffset: [anime.setDashoffset, 0],
-							easing: 'easeInOutQuad',
-							delay: 500,
-							duration: 2500
+							targets: '#logo',
+							opacity: 1,
+							delay: 499,
+							duration: 1
 						})
-						.add({
-							targets: '#g',
-							strokeDashoffset: [anime.setDashoffset, 0],
-							easing: 'easeInOutQuad',
-							delay: -1000,
-							duration: 500
-						})
-				document.getElementById("logo").addEventListener('click',
-					timeline.restart
-				);
+					window.setTimeout(function(){timeline.restart();},1000);
+				});
 			}
 		</script>
 	</head>
